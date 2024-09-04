@@ -1,7 +1,7 @@
-package com.shikhar.journalApp.services;
+package com.prince.journalApp.services;
 
-import com.shikhar.journalApp.entity.JournalEntry;
-import com.shikhar.journalApp.repo.JournalEnteryRepo;
+import com.prince.journalApp.entity.JournalEntry;
+import com.prince.journalApp.repo.JournalEnteryRepo;
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

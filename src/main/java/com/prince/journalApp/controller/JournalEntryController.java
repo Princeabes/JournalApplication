@@ -1,7 +1,7 @@
-package com.shikhar.journalApp.controller;
+package com.prince.journalApp.controller;
 
-import com.shikhar.journalApp.entity.JournalEntry;
-import com.shikhar.journalApp.services.JournalEnteryServices;
+import com.prince.journalApp.entity.JournalEntry;
+import com.prince.journalApp.services.JournalEnteryServices;
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -13,10 +13,10 @@ import java.util.List;
 @RequestMapping("/journal")
 public class JournalEntryController {
 
-    @Autowired
+    @Autowired//enables depenency injection
     JournalEnteryServices journalEnteryServices;
 
-    @PostMapping("/insert")
+    @PostMapping("/insert")//create
     public JournalEntry insertEntry( @RequestBody JournalEntry journalEntry){
         journalEntry.setDate(LocalDateTime.now());
         journalEnteryServices.saveEntry(journalEntry);
@@ -39,7 +39,7 @@ public class JournalEntryController {
         return true ;
     }
 
-    @PutMapping("/uid/{id}")
+    @PutMapping("/uid/{id}")//update
     public JournalEntry updateEntry(@PathVariable ObjectId id ,@RequestBody JournalEntry newEntry){
      JournalEntry oldjournalEntry = journalEnteryServices.getById(id).orElse(null);
      if (oldjournalEntry!=null){

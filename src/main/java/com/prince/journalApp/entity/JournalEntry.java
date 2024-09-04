@@ -1,4 +1,4 @@
-package com.shikhar.journalApp.entity;
+package com.prince.journalApp.entity;
 
 import org.bson.types.ObjectId;
 import org.springframework.cglib.core.Local;
@@ -9,11 +9,11 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Date;
 
-@Document(collection = "myJournalEntryAppliction")
+@Document(collection = "myJournalEntryAppliction")//collection of database=applicationJournalEntry
 public class JournalEntry {
 
-    @Id
-    private ObjectId id;
+    @Id//primary key
+    private ObjectId id;//from mongoRepository of Spring data mongodb
 
     private String title;
     private String content;
